@@ -8,6 +8,7 @@ function AddNewURL()
 {
     const i18n=useContext(I18NContext);
     const [shortUrl,setShortUrl]=useState();
+    const rootUrl=window.location.host+"/";
     const formSubmit=e=>
     {
         const url={url:e.target.elements.url.value}
@@ -27,7 +28,7 @@ function AddNewURL()
             </form>
             {
                 shortUrl&&
-                <h3><Link to={shortUrl}>{window.location.host+"/"+shortUrl}</Link></h3>
+                <h3><Link to={shortUrl}>{rootUrl+shortUrl}</Link></h3>
             }
         </div>
       );
