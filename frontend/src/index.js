@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
 import AddNewURL from './page/AddNewURL';
+import ShowURL from './page/ShowURL';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -9,6 +10,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route index element={<AddNewURL />}/>
+        <Route path="/url/:id" element={<ShowURL />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
