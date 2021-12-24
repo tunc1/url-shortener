@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route,Routes } from 'react-router-dom';
 import AddNewURL from './page/AddNewURL';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AddNewURL />
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<AddNewURL />}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

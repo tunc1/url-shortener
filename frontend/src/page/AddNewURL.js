@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "../component/Navbar";
 import { addNewURL } from "../util/APICall";
+import { Link } from "react-router-dom";
 
 function AddNewURL()
 {
@@ -10,7 +11,7 @@ function AddNewURL()
         const url={url:e.target.elements.url.value}
         addNewURL(url).then(savedUrl=>
         {
-            setShortUrl(window.location.host+"/url/"+savedUrl.id);
+            setShortUrl("url/"+savedUrl.id);
         });
         e.preventDefault();
     };
@@ -24,7 +25,7 @@ function AddNewURL()
             </form>
             {
                 shortUrl&&
-                <h3><a href={shortUrl}>{shortUrl}</a></h3>
+                <h3><Link to={shortUrl}>{window.location.host+"/"+shortUrl}</Link></h3>
             }
         </div>
       );
