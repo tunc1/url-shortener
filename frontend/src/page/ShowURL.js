@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../component/Navbar";
+import I18NContext from "../i18n/I18NContext";
 import { findURLById } from "../util/APICall";
 
 function ShowURL()
 {
+    const i18n=useContext(I18NContext);
     const {id}=useParams();
     const [url,setUrl]=useState();
     const fetchUrl=()=>
@@ -17,7 +19,7 @@ function ShowURL()
             <Navbar/>
             {
                 url&&
-                <a target="_blank" href={url}>Go to the URL</a>
+                <a target="_blank" href={url}>{i18n.goToTheURL}</a>
             }
         </div>
     )

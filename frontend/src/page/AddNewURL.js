@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState,useContext} from "react";
 import Navbar from "../component/Navbar";
 import { addNewURL } from "../util/APICall";
 import { Link } from "react-router-dom";
+import I18NContext from "../i18n/I18NContext";
 
 function AddNewURL()
 {
+    const i18n=useContext(I18NContext);
     const [shortUrl,setShortUrl]=useState();
     const formSubmit=e=>
     {
@@ -19,9 +21,9 @@ function AddNewURL()
         <div className="App">
             <Navbar/>
             <form onSubmit={formSubmit}>
-                <input type="text" className="form-control" placeholder="Enter Url" name="url"/>
-                <input type="submit" className="btn btn-success" value="Add"/>
-                <input type="reset" className="btn btn-warning" value="Clear"/>
+                <input type="text" className="form-control" placeholder={i18n.enterUrl} name="url"/>
+                <input type="submit" className="btn btn-success" value={i18n.add}/>
+                <input type="reset" className="btn btn-warning" value={i18n.clear}/>
             </form>
             {
                 shortUrl&&
