@@ -19,7 +19,7 @@ function ShowURL()
             <Navbar/>
             {
                 url&&
-                <a target="_blank" href={url}>{i18n.goToTheURL}</a>
+                <a target="_blank" href={url}>{i18n.goToTheUrl}</a>
             }
         </div>
     )
