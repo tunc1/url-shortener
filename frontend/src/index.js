@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import AddNewURL from './page/AddNewURL';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AddNewURL />
   </React.StrictMode>,
   document.getElementById('root')
 );
