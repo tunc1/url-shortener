@@ -1,12 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../component/Navbar";
-import I18NContext from "../i18n/I18NContext";
 import { findURLById } from "../util/APICall";
 
-function ShowURL()
+function ShowURL({i18n})
 {
-    const i18n=useContext(I18NContext);
     const {id}=useParams();
     const [url,setUrl]=useState();
     const fetchUrl=()=>

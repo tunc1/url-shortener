@@ -1,12 +1,10 @@
-import { useState,useContext} from "react";
+import { useState} from "react";
 import Navbar from "../component/Navbar";
 import { addNewURL } from "../util/APICall";
 import { Link } from "react-router-dom";
-import I18NContext from "../i18n/I18NContext";
 
-function AddNewURL()
+function AddNewURL({i18n})
 {
-    const i18n=useContext(I18NContext);
     const [shortUrl,setShortUrl]=useState();
     const rootUrl=window.location.host+"/";
     const formSubmit=e=>
